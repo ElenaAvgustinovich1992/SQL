@@ -1,3 +1,7 @@
+1. Create table employees
+   Enter 70 rows into column employee_name
+
+
 create table employees (
 id serial  primary key,
 employee_name Varchar(50) not null
@@ -76,7 +80,11 @@ values
            ('Alina'),
            ('Nikolay')
          
- select * from employees       
+ select * from employees   
+
+
+ 2. Create table salary
+    Enter 16 rows into column monthly_salary  
   
   
  create table salary (
@@ -103,7 +111,12 @@ values
           (2400),
           (2500)
 
- select * from salary     
+ select * from salary  
+
+
+ 3. Create table employee_salary
+    Insert values in employee_salary
+
  
  create table employee_salary (
  id serial  primary key, 
@@ -154,7 +167,11 @@ values
          (777,7),
          (999,2)
          
-select * from employee_salary         
+select * from employee_salary      
+
+
+4. Create table roles
+    Insert values in role_name then change column role_name from int into varchar (30)
 
 create table roles (
 id serial  primary key, 
@@ -186,14 +203,18 @@ values
         ('Middle Automation QA engineer'),
         ('Senior Automation QA engineer')
         
-select * from roles        
+select * from roles     
+
+
+5. Create table roles_employee 
+   Insert values in employee_id ( foreign key for employee_id,id ),role_id (foreign key for role_id, id)
         
 create table roles_employee (
 id serial  primary key, 
 employee_id Int not null unique,
 role_id Int not null,
       
-                foreign key (employee_id)
+                                foreign key (employee_id)
 				references employees(id),
 				foreign key (role_id)
 				references roles(id)
